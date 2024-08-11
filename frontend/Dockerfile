@@ -1,0 +1,1 @@
+FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest

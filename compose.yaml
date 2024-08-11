@@ -1,0 +1,13 @@
+services:
+  zabbix-server:
+    extends:
+      file: ./server/compose.yaml
+      service: zabbix-server
+    profiles:
+      - server
+  zabbix-frontend:
+    extends: 
+      file: ./frontend/compose.yaml
+      service: zabbix-frontend
+    profiles:
+      - server

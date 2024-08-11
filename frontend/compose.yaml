@@ -1,0 +1,13 @@
+services:
+  zabbix-frontend:
+    build: .
+    container_name: zabbix-frontend
+    env_file:
+      - ../common/db-credentials.env
+    ports: 
+      - 80:8080/tcp
+      - 443:8443/tcp
+    restart: unless-stopped
+    uts: host
+    volumes:
+      - /etc/timezone:/etc/timezone:ro

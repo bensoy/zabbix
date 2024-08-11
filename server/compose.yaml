@@ -1,0 +1,12 @@
+services:
+  zabbix-server:
+    build: .
+    container_name: zabbix-server
+    env_file:
+      - ../common/db-credentials.env
+    ports: 
+      - 10051:10051/tcp
+    restart: unless-stopped
+    uts: host
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
